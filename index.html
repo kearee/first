@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cascadestylesheet.css">
+        <script src="javas.js"></script>
+        <title>
+            Calculator for learning
+        </title>
+        <meta name="description" content="dude i sometimes felt like im very bad like i can't compete against these professional web devs even though it should be obvious, i really want to learn hoW to web dev">
+        <link rel="icon" type="image/png" href="a.png">
+    </head>
+    <body>
+        <button onclick="addToDisplay('.')">.</button>
+        <div id="main" class="center">
+            <input readonly id="out">
+            <div id="buttons">
+                <button id="+" class="op" onclick="addToDisplay('+')">+</button>
+                <button id="7" class="button" onclick="addToDisplay('7')">7</button>
+                <button id="8" class="button" onclick="addToDisplay('8')">8</button>
+                <button id="9" class="button" onclick="addToDisplay('9')">9</button>
+                <button id="-" class="op" onclick="addToDisplay('-')">-</button>
+                <button id="4" class="button" onclick="addToDisplay('4')">4</button>
+                <button id="5" class="button" onclick="addToDisplay('5')">5</button>
+                <button id="6" class="button" onclick="addToDisplay('6')">6</button>
+                <button id="*" class="op" onclick="addToDisplay('*')">*</button>
+                <button id="1" class="button" onclick="addToDisplay('1')">1</button>
+                <button id="2" class="button" onclick="addToDisplay('2')">2</button>
+                <button id="3" class="button" onclick="addToDisplay('3')">3</button>
+                <button id="/" class="op" onclick="addToDisplay('/')">/</button>
+                <button id="." class="op" onclick="Clear()">C</button>
+                <button id="0" class="button" onclick="addToDisplay('0')">0</button>
+                <button id="execute" class="exec" onclick="execute()">=</button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            const calcDis = document.getElementById("out");
+            
+            function addToDisplay(inp) {
+                calcDis.value += inp;
+            }
+            
+            function Clear() {
+                calcDis.value = "";
+            }
+
+            function execute() {
+                try {
+                    calcDis.value = eval(calcDis.value);
+                }
+                catch(error) {
+                    calcDis.value = "Error";
+                }
+            }
+        </script>
+    </body>
+</html>
